@@ -56,6 +56,7 @@ def coffee_art():
 
 
 def show_report():
+    print('\033[34mHere is our current resources.\033[m')
     for k, v in resources.items():
         print(f'\033[34m{k.title()}: {v}ml\033[m')
     print(f'\033[34mMoney: ${money}\033[m')
@@ -121,9 +122,7 @@ while True:
         else:
             print(f'You chose "{user_choice}" and it costs ${MENU[user_choice]["cost"]:.2f}')
             if check_resources(user_choice) is True:
-                print(f'Charging...')
                 money += charge_user(user_choice)
-                print(f'\033[33mThis Coffee Machine now has ${money:.2f} in total.\033[m')
                 resources = update_storage(user_choice)
                 break
     print(f'''
