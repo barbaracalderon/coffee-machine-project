@@ -36,6 +36,7 @@ money = 0
 
 # FUNCTIONS BELOW
 def coffee_art():
+    """It shows The Coffee Project Machine its own menu."""
     print('''\033[33m
          )))
         (((
@@ -56,6 +57,7 @@ def coffee_art():
 
 
 def show_report():
+    """It shows the resources report of the Coffee Machine."""
     print('\033[34mHere is our current resources.\033[m')
     for k, v in resources.items():
         print(f'\033[34m{k.title()}: {v}ml\033[m')
@@ -63,6 +65,7 @@ def show_report():
 
 
 def check_resources(user_choice):
+    """It checks if resources are sufficient (True) or not (False)"""
     if MENU[user_choice]["ingredients"]["water"] > resources["water"]:
         print(f'\033[31mSorry. There is not sufficient water for the beverage.\n'
               f'We currently have {resources["water"]}ml of water in storage.\033[m')
@@ -80,6 +83,7 @@ def check_resources(user_choice):
         return True
 
 def charge_user(user_choice):
+    """It charges the user to insert coins for the required beverage."""
     print('''\033[33m
     We accept the following coins:
     Quarters ($0.25), dimes ($0.10)
@@ -101,6 +105,7 @@ def charge_user(user_choice):
 
 
 def update_storage(user_choice):
+    """It updates the Coffee Machine resources after a beverage is ordered."""
     resources["water"] = resources["water"] - MENU[user_choice]["ingredients"]["water"]
     resources["milk"] -= MENU[user_choice]["ingredients"]["milk"]
     resources["coffee"] -= MENU[user_choice]["ingredients"]["coffee"]
