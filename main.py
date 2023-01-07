@@ -95,7 +95,7 @@ def charge_user(user_choice):
     pennies = int(input('How many pennies will you insert? Please: '))
     total = (quarters * 0.25) + (dimes * 0.10) + (nickles * 0.05) + (pennies * 0.01)
     print(f'You provided: ${total:.2f}')
-    if total > MENU[user_choice]["cost"]:
+    if total >= MENU[user_choice]["cost"]:
         change = total - MENU[user_choice]["cost"]
         print(f'Your change: ${change:.2f}\nThank you! We will make your beverage now.')
         total -= change
