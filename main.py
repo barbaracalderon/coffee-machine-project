@@ -82,6 +82,7 @@ def check_resources(user_choice):
         print(f'Great choice! Allow us to charge you now.')
         return True
 
+
 def charge_user(user_choice):
     """It charges the user to insert coins for the required beverage."""
     print('''\033[33m
@@ -137,4 +138,3 @@ while True:
       |     |] - Here's your {user_choice}. Enjoy! :)
       `-----'
     ''')
-    
